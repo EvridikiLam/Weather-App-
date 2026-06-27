@@ -1,4 +1,5 @@
-
+import { useState } from "react";
+import { fetchWeatherByCity } from "../services/weatherApi";
 
 const useWeather = () => {
     const [weatherData, setWeatherData] = useState(null);

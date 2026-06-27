@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 const Navbar = () => {
     const { theme, toggleTheme } = useTheme();

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const useFavorites = () => {
     const [favorites, setFavorites] = useState(() => {
@@ -26,3 +26,4 @@ const useFavorites = () => {
 }
 
 export default useFavorites;
+
