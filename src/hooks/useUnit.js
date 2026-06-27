@@ -8,6 +8,7 @@ const useUnit = () => {
         setUnit((prev) => {
             const newUnit = prev === "metric" ? "imperial" : "metric";
             localStorage.setItem("unit", newUnit);
+            return newUnit;
         });
 
     };

@@ -17,8 +17,8 @@ const WeatherCard = ({ data, unit, onToggleUnit, onAddFavorite }) => {
             <p>Humidity: {data.main.humidity}%</p>
             <p>Wind: {data.wind.speed} m/s </p>
 
-            <button>
-                Switch to {unit === "metric" ? "°C" : "°F"}
+            <button onClick={onToggleUnit}>
+                Switch to {unit === "metric" ? "°F" : "°C"}
             </button>
 
             <button onClick={() => onAddFavorite(data.name)}>
