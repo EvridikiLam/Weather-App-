@@ -4,25 +4,34 @@ const WeatherCard = ({ data, unit, onToggleUnit, onAddFavorite }) => {
     const unitSymbol = unit === "metric" ? "°C" : "°F";
 
     return (
-        <div>
+        <div className="card">
             <h2>{data.name}, {data.sys.country}</h2>
 
             <img
                 src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
                 alt={data.weather[0].description}
             />
+            <div className="stats-grid">
+                <div className="stat-box">
+                    <div className="label">Temperature</div>
+                    <div className="value">{Math.round(temperature)} {unitSymbol}</div>
+                </div>
+                <div className="stat-box">
+                    <div className="label">Humidity</div>
+                    <div className="value">{data.main.humidity}%</div>
+                </div>
+                <div className="stat-box">
+                    <div className="label">Wind</div>
+                    <div className="value">{data.wind.speed} m/s</div>
+                </div>
+            </div>
 
-            <p>{data.weather[0].description}</p>
-            <p>Temp: {Math.round(temperature)} {unitSymbol}</p>
-            <p>Humidity: {data.main.humidity}%</p>
-            <p>Wind: {data.wind.speed} m/s </p>
-
-            <button onClick={onToggleUnit}>
+            <button className="btn-ghost" onClick={onToggleUnit}>
                 Switch to {unit === "metric" ? "°F" : "°C"}
             </button>
 
-            <button onClick={() => onAddFavorite(data.name)}>
-                Add to Favorites 
+            <button className="btn-solid" onClick={() => onAddFavorite(data.name)}>
+                Add to Favorites
             </button>
         </div>
     );

@@ -20,7 +20,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="page">
       <h1> Evri's Weather App</h1>
       <SearchBar onSearch={searchCity} />
 

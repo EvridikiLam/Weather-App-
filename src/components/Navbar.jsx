@@ -5,7 +5,7 @@ const Navbar = () => {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <nav>
+        <nav className="navbar">
             <Link to="/"> Homepage </Link>
             <Link to="/favorites">Favorites </Link>
             <button onClick={toggleTheme}>

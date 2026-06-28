@@ -4,7 +4,7 @@ const FavoriteCard = ({data, unit, onRemove}) => {
     const unitSymbol = unit === "metric" ? "°C" : "°F"; 
     
     return (
-        <div>
+        <div className="fav-card">
             <h3>{data.name}, {data.sys.country}</h3>
             <img 
                 src={`https://openweathermap.org/img/wn/${data.weather[0].icon}.png`} 

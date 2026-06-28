@@ -1,41 +1,339 @@
+*, *::before, *::after {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /* Light theme (default) */
 .app.light {
-  background-color: #f0f4f8;
-  color: #1a202c;
+  background-image: url('/src/assets/day-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color:#1a202c;
+  min-height: 100vh;
 }
 
 /* Dark theme */
 .app.dark {
-  background-color: #1a202c;
-  color: #f0f4f8;
+  background-image: url('/src/assets/night-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color:#f0f4f8;
+  min-height: 100vh;
 }
 
 /* Card styles that adapt to theme */
 .app.light .card {
-  background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 0.5px solid rgba(255, 255, 255, 0.6);
+  padding: 24px;
 }
 
 .app.dark .card {
-  background-color: #2d3748;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+   background-color: rgba(10, 20, 40, 0.65);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  padding: 24px;
 }
 
 /* Button styles */
 .app.light button {
-  background-color: #3182ce;
-  color: white;
+  background-color: #000f5c;
+  color: rgb(207, 207, 207);
   border: none;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 2px;
   cursor: pointer;
 }
 
 .app.dark button {
-  background-color: #63b3ed;
+  background-color: #bbe3ff;
   color: #1a202c;
   border: none;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 2px;
   cursor: pointer;
+}
+
+
+/* NavBar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar a{
+  color: white;
+  text-decoration: none;
+  margin-right: 25px;
+  font-size: 15px;
+  font-weight: 500;
+  transition:opacity 0.2s;
+}
+
+.navbar a:hover {
+  opacity: 0.75;
+}
+
+.navbar button {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* .navbar button:hover {
+   background-color: pink;
+} */
+
+/* page */
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.page h1 {
+  font-size: 30px;
+  font-weight:600;
+  color:#fff;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* search bar */
+.search-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2a;
+}
+
+.search-form input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-form input:focus {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.search-form button {
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a5080;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-form button:hover {
+  background: #fff;
+  color:#000f5c;
+}
+
+/* Cards */
+.card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 28px;
+  margin-bottom: 20px;
+  color:#fff;
+}
+
+.app.light .card {
+  background: rgba(255, 255, 255, 0.55);
+  color: #1a202c;
+}
+
+/* weather card internal */
+.card h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.card img {
+  width: 72px;
+  height: 72px;
+  align-items: center;
+}
+
+.card p {
+  font-size: 15px;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+/* stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.stat-box {
+  background: rgba(255,255,255,0.15);
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+}
+
+.app.light .stat-box {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.stat-box .label {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+
+.stat-box .label {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-bottom: 6px;
+}
+
+.stat-box .value {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* buttons */
+.btn-ghost {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255, 0.4);
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: background 0.2s;
+}
+
+.app.light .btn-ghost {
+  border-color: rgba(0,0,0,0.2);
+  color: #e0e0e0;
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+.btn-solid {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: rgba(255,255,255,0.9);
+  color:#1a202c;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-solid:hover {
+  background-color: #fff;
+}
+
+/* status message */
+.status-msg {
+  text-align: center;
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  padding: 20px;
+}
+
+.app.light .status-msg {
+  color: #1a202c;
+}
+
+/* fav cards */
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap:16px;
+}
+
+.fav-card {
+  background: rgba(255,255,255,0.18);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255, 0.25);
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app.light .fav-card  {
+  background: rgba(255, 255, 255, 0.55);
+  color:#1a202c;
+}
+
+.fav-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.fav-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.fav-card p {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.fav-card .fav-temp {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

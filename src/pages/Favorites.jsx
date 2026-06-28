@@ -24,7 +24,7 @@ const Favorites = () => {
   }, [favorites]);
 
   return (
-    <div>
+    <div className="page">
       <h1>Favorite Cities</h1>
 
       {weatherDataList.length === 0 && (
@@ -32,7 +32,7 @@ const Favorites = () => {
       )}
 
       {weatherDataList.map((data) => (
-        <FavoriteCard
+        <FavoriteCard 
           key={data.id}
           data={data}
           unit={unit}

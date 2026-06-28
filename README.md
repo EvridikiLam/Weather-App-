@@ -1,16 +1,20 @@
-# React + Vite
+# Evri's Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React Weather Application developed as the final project of my studies at Tech Pro Academy. The application lets users search for real-time weather data, save favorite cities, and switch between light and dark mode themes.
 
-Currently, two official plugins are available:
+## Features
+- Search weather by city name
+- View temperature, humidity, wind speed and weather conditions of a city in real-time
+- Save and Remove favorite cities (saved and persisted in local storage)
+- Toggle between Celcius and Fahreneit (also saved and persisted in local storage)
+-Multi-page routing 
+-Unit and component tests with Vitest + React testing library
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React 18
+- Vite
+- React Router
+- Context API
+- Vitest + React Testing Library
+- OpenWeatherMap API
