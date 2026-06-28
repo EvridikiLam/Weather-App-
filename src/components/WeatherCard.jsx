@@ -1,4 +1,4 @@
-const WeatherCard = ({ data, unit, onToggleUnit, onAddFavorite }) => {
+const WeatherCard = ({ data, unit, onToggleUnit, onAddFavorite, onViewDetails }) => {
     const temperature =
         unit === "metric" ? data.main.temp : (data.main.temp * 9) / 5 + 32;
     const unitSymbol = unit === "metric" ? "°C" : "°F";
@@ -32,6 +32,10 @@ const WeatherCard = ({ data, unit, onToggleUnit, onAddFavorite }) => {
 
             <button className="btn-solid" onClick={() => onAddFavorite(data.name)}>
                 Add to Favorites
+            </button>
+
+            <button className="btn-ghost" onClick={() => onViewDetails(data.name)}>
+                View Details
             </button>
         </div>
     );

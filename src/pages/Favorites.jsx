@@ -10,6 +10,9 @@ const Favorites = () => {
   const { unit, toggleUnit } = useUnit();
   const [weatherDataList, setWeatherDataList] = useState([]);
   const navigate = useNavigate();
+  const handleViewDetails = (cityName) => {
+    navigate(`/city/${cityName}`);
+  };
 
   useEffect(() => {
     const fetchAll = async () => {
@@ -37,7 +40,7 @@ const Favorites = () => {
           data={data}
           unit={unit}
           onRemove={removeFavorite}
-          onViewDetails={() => navigate(`/city/${data.name}`)}
+          onViewDetails={handleViewDetails}
         />
       ))}
 

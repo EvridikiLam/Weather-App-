@@ -53,5 +53,16 @@ All 13 tests should pass across 3 test files covering:
 
 ---
 
-##State management approach
+## State management approach
 I used custom hooks (`useWeather`, `useFavorites`, `useUnit`) for application state management.
+
+This approach keeps each concern isolated and simple:
+- 'useWeather' handles API calls, loading, and error states
+- 'useFavorites' manages the saved cities list with local storage persistence
+- 'useUnit' tracks the toggle button for Celcius/Fahreneit preference
+
+The Context API is used exclusively for theming across the whole app. Themeing is a global low-frequency state and that's what context api is designed for
+
+Redux wasn't used for this project's state management because setting up a store, actions and reducers would add complexity to such an small app
+
+
