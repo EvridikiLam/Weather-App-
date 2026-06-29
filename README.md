@@ -66,3 +66,7 @@ The Context API is used exclusively for theming across the whole app. Themeing i
 Redux wasn't used for this project's state management because setting up a store, actions and reducers would add complexity to such an small app
 
 
+## TO DO
+- make html more semantic to ensure accesibility
+- Change how the nav bar renders, UX improvement
+- best practice for theming would be to have one class app-dark instead of writing .app.dark in css
