@@ -299,29 +299,52 @@
 }
 
 .fav-card {
-  background: rgba(255,255,255,0.18);
+  background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(16px);
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   padding: 20px;
   color: #fff;
+  margin-bottom: 14px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 14px;
 }
-
 .app.light .fav-card  {
   background: rgba(255, 255, 255, 0.55);
   color:#1a202c;
 }
 
-.fav-card h3 {
-  font-size: 16px;
+
+.fav-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fav-card-left h3 {
+  font-size: 18px;
   font-weight: 600;
   margin-bottom: 4px;
 }
 
-.fav-card h3 {
+.fav-card-left p {
+  font-size: 13px;
+  opacity: 0.75;
+  text-transform: capitalize;
+}
+
+.fav-card-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fav-card-actions {
+  display: flex;
+  gap: 10px;
+}
+/* .fav-card h3 {
   font-size: 16px;
   font-weight: 600;
   margin-bottom: 4px;
@@ -335,7 +358,7 @@
 .fav-card .fav-temp {
   font-size: 22px;
   font-weight: 600;
-}
+} */
 button {
   margin:4px;
 }
